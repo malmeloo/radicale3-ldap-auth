@@ -148,7 +148,7 @@ class Auth(BaseAuth):
         logger.info("  %r is %r", "ldap_scope", self.ldap_scope)
         logger.info("  %r is %r", "ldap_support_extended", self.ldap_support_extended)
         if self.ldap_support_extended:
-          print("Support extended is TRUE")
+          print("Support extended is set, type is :", type(ldap_support_extended))
             
     def login(self, login, password):
         """Check if ``login``/``password`` couple is valid."""
@@ -183,6 +183,8 @@ class Auth(BaseAuth):
         conn.unbind()
 
         if users:
+            if self.ldap_support_extended:
+                print("Support extended is set, type is :", type(ldap_support_extended))
             user_dn = users[0]['dn']
             uid = users[0]['attributes'][self.ldap_attribute]
             logger.info("LDAP user %s (%s) found" % (uid, user_dn))
