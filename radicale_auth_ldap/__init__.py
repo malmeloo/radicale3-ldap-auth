@@ -137,7 +137,9 @@ class Auth(BaseAuth):
         logger.info("  %r is %r", "ldap_password", self.ldap_password)
         logger.info("  %r is %r", "ldap_scope", self.ldap_scope)
         logger.info("  %r is %r", "ldap_support_extended", self.ldap_support_extended)
-
+        if self.ldap_support_extended:
+          print("Support!")
+            
     def login(self, login, password):
         """Check if ``login``/``password`` couple is valid."""
         SERVER = ldap3.Server(self.ldap_url)
