@@ -183,8 +183,6 @@ class Auth(BaseAuth):
         conn.unbind()
 
         if users:
-            if self.ldap_support_extended:
-                print("Support extended is set, type is :", type(ldap_support_extended))
             user_dn = users[0]['dn']
             uid = users[0]['attributes'][self.ldap_attribute]
             logger.info("LDAP user %s (%s) found" % (uid, user_dn))
@@ -195,6 +193,7 @@ class Auth(BaseAuth):
                 if self.ldap_support_extended:
                     whoami = conn.extend.standard.who_am_i()
                     logger.debug("LDAP whoami: %s" % whoami)
+                    print("Support extended type is :", type(self.ldap_support_extended))
                 else:
                     logger.debug("LDAP skip extended: call whoami")
                     whoami = conn.result['result'] == 0
