@@ -19,7 +19,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Radicale.  If not, see <http://www.gnu.org/licenses/>.
 
-# SHROOM and nitnelave LLDAP work
+# SHROOM and nitnelave LLDAP work 17:13
 
 """
 LDAP authentication.
