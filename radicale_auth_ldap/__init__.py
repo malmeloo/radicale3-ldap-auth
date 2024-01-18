@@ -188,6 +188,7 @@ class Auth(BaseAuth):
                 else:
                     logger.debug("LDAP skip extended: call whoami")
                     whoami = conn.result['result'] == 0
+                    print(conn.result)
                 conn.unbind()
                 if whoami:
                     logger.info("LDAP bind OK")
