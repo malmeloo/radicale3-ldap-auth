@@ -37,11 +37,13 @@ from radicale.log import logger
 import radicale_auth_ldap.ldap3imports
 
 def parse_bool(v):
+    print("parse_bool ldap_support_extended")
     if v in ["True", "true", "yes"]:
         return True
     if v in ["False", "false", "no"]:
         return False
     raise ValueError("Not a bool")
+    print('value of ldap_support_extended', ldap_support_extended, 'type of the variable: ', type(ldap_support_extended))
 
 PLUGIN_CONFIG_SCHEMA = {
     "auth": {
