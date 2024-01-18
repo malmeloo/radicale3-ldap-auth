@@ -81,7 +81,7 @@ PLUGIN_CONFIG_SCHEMA = {
             "type": str
         },
         "ldap_support_extended": {
-            "value": True,
+            "value": "True",
             "help": "",
             "type": parse_bool
         }
