@@ -188,7 +188,8 @@ class Auth(BaseAuth):
                 conn = ldap3.Connection(SERVER, user_dn, password)
                 conn.bind()
                 logger.debug(conn.result)
-                if self.ldap_support_extended:
+                if parse_bool(self.ldap_support_extended):
+                #if self.ldap_support_extended:
                     whoami = conn.extend.standard.who_am_i()
                     logger.debug("LDAP whoami: %s" % whoami)
                 else:
