@@ -10,7 +10,40 @@ I edited this plugin thanks to https://github.com/nitnelave, the Owner of LLDAP.
 ## Quick docker compose example
 You can find a complete docker-compose example at https://github.com/shroomify-it/docker-deploy_radicale-agendav-lldap
 
-# Working radicale config example with OPENLDAP, with comments
+# radicale config with LLDAP, no comments
+You may add any other [section] from radicale's documentation.
+For example the [rights] section : https://radicale.org/v3.html#authentication-and-rights
+
+```
+[auth]
+#type = htpasswd
+#htpasswd_filename = /etc/radicale/users/radicale-users
+#htpasswd_encryption = md5
+
+type = radicale_auth_ldap
+ldap_url = ldap://lldap:3890  
+ldap_base = dc=example,dc=domain,dc=com
+ldap_attribute = uid
+ldap_filter = (objectClass=person)
+ldap_binddn = uid=admin,ou=people,dc=example,dc=domain,dc=com
+ldap_password = CHANGEME
+ldap_scope = LEVEL
+ldap_support_extended = no
+
+[server]
+hosts = 0.0.0.0:5232, [::]:5232
+
+[storage]
+filesystem_folder = /data/.var/lib/radicale/collections
+
+[logging]
+#level = debug, info, warning, error, critical
+level = error
+mask_passwords = false
+```
+
+
+# radicale config with OPENLDAP, with comments
 You will need to set a few options inside your radicale config file. Example:
 
 ```
@@ -55,37 +88,4 @@ filesystem_folder = /data/.var/lib/radicale/collections
 #level = debug, info, warning, error, critical
 level = error
 mask_passwords = false
-```
-
-# Working radicale config example with LLDAP, no comments
-You may add any other [section] from radicale's documentation.
-For example the [rights] section : https://radicale.org/v3.html#authentication-and-rights
-
-```
-[auth]
-#type = htpasswd
-#htpasswd_filename = /etc/radicale/users/radicale-users
-#htpasswd_encryption = md5
-
-type = radicale_auth_ldap
-ldap_url = ldap://lldap:3890  
-ldap_base = dc=example,dc=domain,dc=com
-ldap_attribute = uid
-ldap_filter = (objectClass=person)
-ldap_binddn = uid=admin,ou=people,dc=example,dc=domain,dc=com
-ldap_password = CHANGEME
-ldap_scope = LEVEL
-ldap_support_extended = no
-
-[server]
-hosts = 0.0.0.0:5232, [::]:5232
-
-[storage]
-filesystem_folder = /data/.var/lib/radicale/collections
-
-[logging]
-#level = debug, info, warning, error, critical
-level = error
-mask_passwords = false
-
 ```
