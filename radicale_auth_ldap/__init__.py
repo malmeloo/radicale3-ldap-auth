@@ -5,6 +5,7 @@
 # Copyright © 2011-2013 Guillaume Ayoub
 # Copyright © 2015 Raoul Thill
 # Copyright © 2017 Marco Huenseler
+# Copyright © 2024 Timothée Levêque
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,7 +20,8 @@
 # You should have received a copy of the GNU General Public License
 # along with Radicale.  If not, see <http://www.gnu.org/licenses/>.
 
-# SHROOM and nitnelave LLDAP work 08:49 27-01
+# This script is made to make Radicale + Agendav + LightLDAP work together 
+# Last modification 27/01/2024
 
 """
 LDAP authentication.
@@ -189,7 +191,6 @@ class Auth(BaseAuth):
                 conn.bind()
                 logger.debug(conn.result)
                 if parse_bool(self.ldap_support_extended):
-                #if self.ldap_support_extended:
                     whoami = conn.extend.standard.who_am_i()
                     logger.debug("LDAP whoami: %s" % whoami)
                 else:
