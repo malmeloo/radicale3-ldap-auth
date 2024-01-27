@@ -4,7 +4,7 @@ Use the `2-final` git tag for Radicale 2 support.
 
 It works with OpenLDAP https://github.com/osixia/docker-openldap and LightLDAP https://github.com/lldap/lldap/
 
-# How to configure
+# Working radicale config example with OPENLDAP, with comments
 You will need to set a few options inside your radicale config file. Example:
 
 ```
