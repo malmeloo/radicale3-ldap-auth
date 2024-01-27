@@ -38,6 +38,17 @@ ldap_scope = LEVEL
 # LDAP extended option
 # If the server is samba, ldap_support_extended is should be no
 ldap_support_extended = yes
+
+[server]
+hosts = 0.0.0.0:5232, [::]:5232
+
+[storage]
+filesystem_folder = /data/.var/lib/radicale/collections
+
+[logging]
+#level = debug, info, warning, error, critical
+level = error
+mask_passwords = false
 ```
 
 # Working radicale config example with LLDAP, no comments
