@@ -1,8 +1,13 @@
 # What is this?
 This is an authentication plugin for Radicale 3. It adds an LDAP authentication backend which can be used for authenticating users against an LDAP server.
+
 Use the `2-final` git tag for Radicale 2 support.
 
 It works with OpenLDAP https://github.com/osixia/docker-openldap and LightLDAP https://github.com/lldap/lldap/
+
+I edited this plugin thanks to https://github.com/nitnelave, the Owner of LLDAP.
+
+You can find a complete docker-compose example at https://github.com/shroomify-it/docker-deploy_radicale-agendav-lldap
 
 # Working radicale config example with OPENLDAP, with comments
 You will need to set a few options inside your radicale config file. Example:
