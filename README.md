@@ -40,7 +40,7 @@ ldap_scope = LEVEL
 ldap_support_extended = yes
 ```
 
-# Working example
+# Working radicale config example with LLDAP, no comments
 You may add any other [section] from radicale's documentation.
 For example the [rights] section : https://radicale.org/v3.html#authentication-and-rights
 
