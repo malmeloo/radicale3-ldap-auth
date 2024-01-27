@@ -7,6 +7,7 @@ It works with OpenLDAP https://github.com/osixia/docker-openldap and LightLDAP h
 
 I edited this plugin thanks to https://github.com/nitnelave, the Owner of LLDAP.
 
+## Quick docker compose example
 You can find a complete docker-compose example at https://github.com/shroomify-it/docker-deploy_radicale-agendav-lldap
 
 # Working radicale config example with OPENLDAP, with comments
