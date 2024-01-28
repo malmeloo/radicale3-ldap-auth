@@ -10,7 +10,7 @@ I edited this plugin thanks to https://github.com/nitnelave, the Owner of LLDAP.
 ## Quick docker compose example
 You can find a complete docker-compose example at https://github.com/shroomify-it/docker-deploy_radicale-agendav-lldap
 
-# radicale config with LLDAP, no comments
+## radicale config with LLDAP, no comments
 You may add any other [section] from radicale's documentation.
 For example the [rights] section : https://radicale.org/v3.html#authentication-and-rights
 
@@ -32,7 +32,7 @@ ldap_support_extended = no
 ```
 
 
-# radicale config with OPENLDAP, with comments
+## radicale config with OPENLDAP, with comments
 You will need to set a few options inside your radicale config file. Example:
 
 ```
