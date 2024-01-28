@@ -22,24 +22,13 @@ For example the [rights] section : https://radicale.org/v3.html#authentication-a
 
 type = radicale_auth_ldap
 ldap_url = ldap://lldap:3890  
-ldap_base = dc=example,dc=domain,dc=com
+ldap_base = dc=example,dc=com
 ldap_attribute = uid
 ldap_filter = (objectClass=person)
-ldap_binddn = uid=admin,ou=people,dc=example,dc=domain,dc=com
+ldap_binddn = uid=admin,ou=people,dc=example,dc=com
 ldap_password = CHANGEME
 ldap_scope = LEVEL
 ldap_support_extended = no
-
-[server]
-hosts = 0.0.0.0:5232, [::]:5232
-
-[storage]
-filesystem_folder = /data/.var/lib/radicale/collections
-
-[logging]
-#level = debug, info, warning, error, critical
-level = error
-mask_passwords = false
 ```
 
 
@@ -54,19 +43,19 @@ type = radicale_auth_ldap
 ldap_url = ldap://ldap:389
 
 # LDAP base path
-ldap_base = ou=Users,dc=TESTDOMAIN
+ldap_base = ou=Users,dc=example,dc=com
 
 # LDAP login attribute
 ldap_attribute = uid
 
 # LDAP filter string
 # placed as X in a query of the form (&(...)X)
-# example: (objectCategory=Person)(objectClass=User)(memberOf=cn=calenderusers,ou=users,dc=example,dc=org)
+# example: (objectCategory=Person)(objectClass=User)(memberOf=cn=calenderusers,ou=users,dc=example,dc=com)
 ldap_filter = (objectClass=person)
 
 # LDAP dn for initial login, used if LDAP server does not allow anonymous searches
 # Leave empty if searches are anonymous
-ldap_binddn = cn=admin,dc=TESTDOMAIN
+ldap_binddn = cn=admin,dc=example,dc=com
 
 # LDAP password for initial login, used with ldap_binddn
 ldap_password = verysecurepassword
@@ -77,15 +66,4 @@ ldap_scope = LEVEL
 # LDAP extended option
 # If the server is samba, ldap_support_extended is should be no
 ldap_support_extended = yes
-
-[server]
-hosts = 0.0.0.0:5232, [::]:5232
-
-[storage]
-filesystem_folder = /data/.var/lib/radicale/collections
-
-[logging]
-#level = debug, info, warning, error, critical
-level = error
-mask_passwords = false
 ```
