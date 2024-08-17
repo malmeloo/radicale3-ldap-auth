@@ -43,6 +43,7 @@ ldap3.set_config_parameter(
     'ATTRIBUTES_EXCLUDED_FROM_CHECK',
     ldap3.get_config_parameter('ATTRIBUTES_EXCLUDED_FROM_CHECK') + [
         "createTimestamp",
+        "modifyTimestamp",
     ],
 )
 
