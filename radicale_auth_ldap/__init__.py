@@ -38,6 +38,14 @@ from radicale.log import logger
 
 import radicale_auth_ldap.ldap3imports
 
+# Necessary for Authentik support
+ldap3.set_config_parameter(
+    'ATTRIBUTES_EXCLUDED_FROM_CHECK',
+    ldap3.get_config_parameter('ATTRIBUTES_EXCLUDED_FROM_CHECK') + [
+        "createTimestamp",
+    ],
+)
+
 def parse_bool(v):
     print("value of ldap_support_extended: ", v, "type of the variable: ", type(v))
     if v in ["True", "true", "yes"]:
