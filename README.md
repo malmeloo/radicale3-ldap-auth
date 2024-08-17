@@ -1,7 +1,7 @@
 # What is this?
 This is an authentication plugin (v0.3) for Radicale 3. It adds an LDAP authentication backend which can be used for authenticating users against an LDAP server.
 
-It works with OpenLDAP https://github.com/osixia/docker-openldap and LightLDAP https://github.com/lldap/lldap/
+It is confirmed to work with [OpenLDAP](https://github.com/osixia/docker-openldap), [LightLDAP](https://github.com/lldap/lldap/) and [Authentik](https://goauthentik.io).
 
 I edited this plugin thanks to https://github.com/nitnelave, the Owner of LLDAP.
 
