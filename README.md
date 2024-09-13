@@ -1,3 +1,6 @@
+> [!NOTE]
+> Radicale now has native LDAP support! Please see [this PR](https://github.com/Kozea/Radicale/pull/1218) for more info.
+
 # What is this?
 This is an authentication plugin (v0.3) for Radicale 3. It adds an LDAP authentication backend which can be used for authenticating users against an LDAP server.
 
